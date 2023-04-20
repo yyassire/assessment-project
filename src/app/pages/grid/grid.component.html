@@ -1,0 +1,66 @@
+<div class="grid-component">
+  <div class="grid-container">
+    <div class="left">
+      <button
+        class="left-btn"
+        [ngStyle]="{ backgroundColor: menuItem.color }"
+        *ngFor="let menuItem of menuItems"
+        (click)="changeColor(menuItem.color)"
+      >
+        {{ menuItem.name }}
+      </button>
+    </div>
+    <form [formGroup]="sudoForm" class="grid-action" (ngSubmit)="onSubmit()">
+      <p class="form-title">Two</p>
+      <input
+        type="text"
+        formControlName="firstText"
+        placeholder="Enter first text"
+      />
+
+      <input
+        type="text"
+        formControlName="secondText"
+        placeholder="Enter second text"
+      />
+
+      <input
+        type="text"
+        formControlName="thirdText"
+        placeholder="Enter third text"
+      />
+
+      <input
+        type="text"
+        formControlName="FourthText"
+        placeholder="Enter Fourth text"
+      />
+
+      <input
+        type="text"
+        formControlName="FifthText"
+        placeholder="Enter Fifth text"
+      />
+
+      <div class="form-actions">
+        <button
+          class="form-action reset"
+          type="button"
+          [disabled]="sudoForm.pristine"
+          (click)="handleReset()"
+          [ngStyle]="{ backgroundColor: (color$ | async).color }"
+        >
+          Reset
+        </button>
+        <button
+          class="form-action submit"
+          [disabled]="!sudoForm.valid"
+          type="submit"
+          [ngStyle]="{ backgroundColor: (color$ | async).color }"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

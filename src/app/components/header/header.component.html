@@ -1,0 +1,8 @@
+<div class="header" [ngStyle]="{ backgroundColor: (color$ | async).color }">
+  <div class="header-container">
+    <div class="logo">Logo</div>
+    <ul class="navigation-links">
+      <li *ngFor="let link of navigationLinks">{{ link }}</li>
+    </ul>
+  </div>
+</div>

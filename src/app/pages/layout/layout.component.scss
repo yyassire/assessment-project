@@ -1,0 +1,41 @@
+@import "../../app.component.scss";
+.layout-body {
+  background-color: #fbfbfd;
+  height: calc(100% - 100px);
+  position: relative;
+  top: 60px;
+  .layout-container {
+    display: flex;
+    height: 100%;
+
+    .b-body {
+      overflow-y: scroll;
+      flex: 1;
+      &::-webkit-scrollbar {
+        width: 4px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        border-radius: 100px;
+        background-color: #3aafa9;
+        border: 6px solid #3aafa9;
+      }
+
+      .b-body-container {
+        width: 80%;
+        margin: 25px auto;
+      }
+    }
+    .b-sidebar {
+      width: 160px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.1);
+      @include responsive(phone) {
+        display: none;
+      }
+    }
+  }
+}

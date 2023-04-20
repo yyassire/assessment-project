@@ -1,0 +1,91 @@
+@import "../../app.component.scss";
+.flex-component {
+  .flex-container {
+    display: flex;
+    gap: 70px;
+    .left {
+      width: 193px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      @include responsive(phone) {
+        display: none;
+      }
+      .left-btn {
+        border: none;
+        padding: 2px 7px;
+        border-radius: 4px;
+        cursor: pointer;
+        height: 35px;
+        transition: all 100ms ease-in-out;
+        &:hover {
+          transform: translateY(-2px);
+          color: white;
+        }
+        &:active {
+          opacity: 0.7;
+        }
+      }
+    }
+    //
+    .flex-action {
+      .form-title {
+        text-align: center;
+        font-size: 30px;
+        font-weight: 700;
+        font-family: "Dancing Script", cursive;
+      }
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 35px;
+      input[type="text"] {
+        border-radius: 5px;
+        border: none;
+        padding: 14px 10px;
+        font-size: 18px;
+        outline: none;
+        box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+      }
+      .form-actions {
+        display: flex;
+        align-items: center;
+        gap: 50px;
+        .form-action {
+          flex: 1;
+          border-radius: 5px;
+          border: none;
+          padding: 14px 10px;
+          font-size: 18px;
+          outline: none;
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1);
+          cursor: pointer;
+          color: white;
+          &:hover {
+            transform: translateY(-2px);
+            color: white;
+          }
+          &:active {
+            opacity: 0.7;
+          }
+          &:disabled {
+            background-color: rgb(172, 172, 172);
+            cursor: not-allowed;
+            &:active {
+              opacity: 1;
+            }
+          }
+        }
+        .reset {
+          background-color: green;
+        }
+        .submit {
+          background-color: blue;
+        }
+      }
+    }
+  }
+}
+input.ng-invalid.ng-touched {
+  border: 1px solid red !important;
+}
