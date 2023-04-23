@@ -1,22 +1,25 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LayoutComponent } from './pages/layout/layout.component';
+import { FlexComponent } from './pages/flex/flex.component';
+import { GridComponent } from './pages/grid/grid.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: LayoutComponent,
-    children: [
-      {
-        path: '',
-        loadChildren: () =>
-          import('./pages/pages.module').then((m) => m.PagesModule),
-      },
-    ],
+    component: FlexComponent,
+    data: {
+      title: 'flex',
+    },
+  },
+  {
+    path: 'grid',
+    component: GridComponent,
+    data: {
+      title: 'grid',
+    },
   },
   { path: '**', redirectTo: '' },
 ];
-
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { scrollPositionRestoration: 'enabled' }),

@@ -1,4 +1,6 @@
-export const menuItems: any = [
+import { menuItem } from '../interface/color';
+
+export const menuItems: menuItem[] = [
   { name: 'First meny', color: 'blue' },
   { name: 'Second meny', color: 'green' },
   { name: 'Third meny', color: 'purple' },

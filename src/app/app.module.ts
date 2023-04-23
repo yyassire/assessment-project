@@ -5,7 +5,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PagesModule } from './pages/pages.module';
 
-import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { colorReducer } from './state/color.reducer';
 
@@ -15,7 +14,6 @@ import { colorReducer } from './state/color.reducer';
     BrowserModule,
     AppRoutingModule,
     PagesModule,
-    FormsModule,
     StoreModule.forRoot({ color: colorReducer }, {}),
   ],
   providers: [],

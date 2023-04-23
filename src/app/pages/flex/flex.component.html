@@ -48,7 +48,7 @@
           type="button"
           [disabled]="sudoForm.pristine"
           (click)="handleReset()"
-          [ngStyle]="{ backgroundColor: (color$ | async).color }"
+          [ngStyle]="{ backgroundColor: color$ | async }"
         >
           Reset
         </button>
@@ -56,7 +56,7 @@
           class="form-action submit"
           [disabled]="!sudoForm.valid"
           type="submit"
-          [ngStyle]="{ backgroundColor: (color$ | async).color }"
+          [ngStyle]="{ backgroundColor: color$ | async }"
         >
           Submit
         </button>
